@@ -2,14 +2,7 @@
 
 import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient({
-  // Use the service name as the host when running in Docker
-  datasources: {
-    db: {
-      url: process.env.DATABASE_URL || "mysql://root:root@mysql:3306/notes",
-    },
-  },
-});
+const prisma = new PrismaClient();
 
 export const noteRepository = {
   async findAll() {
