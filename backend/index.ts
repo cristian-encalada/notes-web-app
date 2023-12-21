@@ -5,7 +5,7 @@ dotenv.config();
 
 import express from "express";
 import cors from "cors";
-import noteController from "./controllers/noteController";
+import noteController from "./src/controllers/noteController";
 
 const app = express();
 const PORT = 5000;
