@@ -26,7 +26,7 @@ const App = () => {
     useEffect(() => {
       const fetchNotes = async () => {
         try {
-          const response = await fetch("http://localhost:5000/api/notes");
+          const response = await fetch("https://notes-app-node-ce.vercel.app/api/notes");
     
           const allNotes: Note[] = await response.json();
     
@@ -61,7 +61,7 @@ const App = () => {
     // console.log("category: ", category);
     try {
       const response = await fetch(
-        "http://localhost:5000/api/notes",
+        "https://notes-app-node-ce.vercel.app/api/notes",
         {
           method: "POST",
           headers: {
@@ -105,7 +105,7 @@ const App = () => {
 
     try {
       const response = await fetch(
-        `http://localhost:5000/api/notes/${selectedNote.id}`,
+        `https://notes-app-node-ce.vercel.app/api/notes/${selectedNote.id}`,
         {
           method: "PUT",
           headers: {
@@ -153,7 +153,7 @@ const App = () => {
   
     try {
       await fetch(
-        `http://localhost:5000/api/notes/${noteId}`,
+        `https://notes-app-node-ce.vercel.app/api/notes/${noteId}`,
         {
           method: "DELETE"
         }
@@ -187,7 +187,7 @@ const App = () => {
       );
   
       if (updatedNote) {
-        await fetch(`http://localhost:5000/api/notes/${noteId}`, {
+        await fetch(`https://notes-app-node-ce.vercel.app/api/notes/${noteId}`, {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
