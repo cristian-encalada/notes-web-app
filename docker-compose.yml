@@ -1,0 +1,26 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "3000:3000"
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.backend
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mysql
+  mysql:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: notes
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./backend/db_notes.sql:/docker-entrypoint-initdb.d/db_notes.sql

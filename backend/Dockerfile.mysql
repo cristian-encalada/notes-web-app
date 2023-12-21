@@ -1,0 +1,8 @@
+# Use the mysql:latest as a parent image
+FROM mysql:latest
+
+# Credentials for the MySQL database
+ENV MYSQL_ROOT_PASSWORD=root
+
+# Copy the SQL script to initialize the database
+COPY ./db_notes.sql /docker-entrypoint-initdb.d/
