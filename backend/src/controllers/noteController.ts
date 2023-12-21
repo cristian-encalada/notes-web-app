@@ -65,4 +65,8 @@ router.delete("/api/notes/:id", async (req: Request, res: Response) => {
   }
 });
 
+router.get("/", async (req: Request, res: Response) => {
+  res.status(200).json('The backend app is working well!. Go to /api/notes');
+});
+
 export default router;
