@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS notes;
-USE notes;
+CREATE DATABASE IF NOT EXISTS notesdb;
+USE notesdb;
 
 -- Create the 'notes' table
 CREATE TABLE IF NOT EXISTS notes (
