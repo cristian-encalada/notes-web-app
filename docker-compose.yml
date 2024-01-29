@@ -26,4 +26,3 @@ services:
       - "3306:3306"
     volumes:
       - ./backend/db_notes.sql:/docker-entrypoint-initdb.d/db_notes.sql
-    container_name: notes-web-app-mysql
