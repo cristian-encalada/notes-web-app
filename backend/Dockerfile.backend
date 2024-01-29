@@ -16,6 +16,9 @@ COPY . .
 # Generate Prisma client
 RUN npx prisma generate
 
+# Create .env file
+RUN echo "MYSQL_DATABASE_URL=mysql://root:root@notes-web-app-mysql:3306/notesdb" > .env
+
 # Stage 2: Create the final image
 FROM node:18-alpine
 

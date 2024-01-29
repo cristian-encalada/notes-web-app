@@ -11,6 +11,8 @@ services:
       dockerfile: Dockerfile.backend
     ports:
       - "5000:5000"
+    env_file:
+      - ./backend/.env
     depends_on:
       - mysql
   mysql:
@@ -19,8 +21,9 @@ services:
       dockerfile: Dockerfile.mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: notes
+      MYSQL_DATABASE: notesdb
     ports:
       - "3306:3306"
     volumes:
       - ./backend/db_notes.sql:/docker-entrypoint-initdb.d/db_notes.sql
+    container_name: notes-web-app-mysql

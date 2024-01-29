@@ -19,12 +19,6 @@ https://notes-app-node-ce.vercel.app/api/notes
 ### Prerequisites
 - [Docker](https://docs.docker.com/engine/install/) and [Docker-compose](https://docs.docker.com/compose/install/) installed.
 
-- Create a `.env` file for the database connection:
-```
-MYSQL_DATABASE_URL=mysql://username:password@localhost:3306/notes_db
-```
-
-
 ## Execute run.sh
 
 To execute the project in a local environment, simply execute the script `run.sh`.
